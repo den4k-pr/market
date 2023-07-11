@@ -1,0 +1,222 @@
+
+
+$Background_main: #dde2eb;
+$Background_first: #172c3a;
+$Background_second: #4b5061;
+$color_main: #24262c;
+$color_second: #ffdd00;
+
+
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+  }
+  
+  *,
+  *:before,
+  *:after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+  }
+  
+  :focus,
+  :active {
+	outline: none;
+  }
+  
+  a:focus,
+  a:active {
+	outline: none;
+  }
+  
+  nav,
+  footer,
+  header,
+  aside {
+	display: block;
+  }
+  
+  html,
+  body {
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	font-family: 'Montserrat', sans-serif;
+	background-color: #171515;
+	color: $color_main;
+  }
+  *::-webkit-scrollbar {
+	width: 8px;
+  }
+  *::-webkit-scrollbar-thumb {
+	background-color: #7d5e5dbe;
+	border-radius: 8px;
+  }
+  
+  input,
+  button,
+  textarea {
+	font-family: inherit;
+  }
+  
+  input::-ms-clear {
+	display: none;
+  }
+  
+  button {
+	background-color: transparent;
+	cursor: pointer;
+	color: #fff;
+  }
+  button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+  }
+  main {
+	height: 100%;
+  }
+  a,
+  a:visited {
+	text-decoration: none;
+  }
+  
+  a:hover {
+	text-decoration: none;
+  }
+  
+  ul li {
+	list-style: none;
+  }
+  
+  img {
+	vertical-align: top;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+	font-size: inherit;
+	font-weight: 400;
+  }
+  a {
+	color: #fff;
+  }
+  
+  .container {
+	max-width: 1240px;
+	width: 100%;
+	padding: 50px 15px;
+	box-sizing: border-box;
+	position: relative;
+	margin: 0 auto;
+  }
+
+  .button{
+	background-color: $color_second;
+	transition: .1s;
+	padding: 6px 10px;
+	border-radius: 6px;
+	font-size: 16px;
+  }
+  .button:hover{
+	background-color: #604a24;
+  }
+  .productIcon{
+	background-color: #fff;
+	font-size: 16px;
+	color: $color_second;
+  }
+  .title{
+    font-size: 37px;
+    line-height: 35px;
+    font-weight: 600;
+    padding-bottom: 15px;
+    text-align: center;
+    color: #fff;
+  }
+
+  .text{
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .message{
+    color: #00cc0a;
+    border: 2px solid #00cc0a;
+    width: 100%;
+    font-size: 16px;
+    padding: 8px;
+    text-align: center;
+    border-radius: 6px;
+    margin-top: 10px;
+  }
+  
+  .emptyProducts{
+    font-size: 18px;
+    text-align: center;
+    padding: 150px 0;
+    font-weight: 600;
+    color: red; 
+  }
+
+  #__next{
+    overflow: hidden;
+  }
+
+  .loader{
+    font-size: 40px;
+    color: #fff;
+  }
+
+  .loader{
+    background-color: #171515;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-spiner{
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border: 3px solid #fff;
+      border-radius: 50%;
+      border-top-color: #007bff;
+      animation: spin 1s ease-in-out infinite;
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media(max-width: 600px) {
+    .text{
+      font-size: 14px;
+      line-height: 20px;
+    }
+    .title{
+      font-size: 30px;
+      line-height: 35px;
+      font-weight: 600;
+      padding-bottom: 15px;
+      text-align: center;
+    }
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+  

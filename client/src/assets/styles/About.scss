@@ -1,0 +1,25 @@
+@import './globals.scss';
+
+.about{
+    &__top{
+        background-color: $color_second;
+        color: #fff;
+        text-align: center;
+    }
+
+    &__bottom{
+        background-color: #fff;
+    }
+    &__content{
+        margin: 50px 0;
+        background-color: #fff;
+        border-radius: 3px;
+        padding: 30px;
+        
+        &-title{
+            font-size: 25px;
+            line-height: 45px;
+            font-weight: 600;
+        }
+    }
+}

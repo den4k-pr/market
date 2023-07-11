@@ -1,0 +1,248 @@
+@import './globals.scss';
+
+
+
+.product-container{
+    max-width: 306px;
+    width: 100%;
+    background-color: $color_second;
+    border-radius: 15px;
+    transition: .2s;
+    transform-origin: center;
+}
+
+.product-container:hover{
+    transform: rotate(10deg);
+
+    .product{
+        transform: rotate(-10deg);
+
+        &__top-img{
+            transform: scale(1.1);
+        }
+    }
+}
+
+.catalog{
+
+    &__products{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 40px;
+        padding: 40px 0;
+        .product{
+            width: 100%;
+            min-height: 413px;
+            position: relative;
+            transition: transform .2s ease;
+            overflow: hidden;
+            z-index: 1;
+            border-radius: 15px;
+            background-color: #fff;
+            
+
+            &-name{
+                font-size: 20px;
+                line-height: 26px;
+                font-weight: 600;
+                padding: 15px 0 20px 10px;
+            }
+
+            &-price{
+                font-size: 18px;
+                line-height: 20px;
+                color: #f6450b;
+                padding: 0 0 10px 10px;
+            }
+
+            &__top{
+                height: 306px;
+                overflow: hidden;
+                &-navigation{
+                    display: flex;
+                    gap: 10px;
+                    width: 70px;
+                    padding: 10px;
+                    background-color: #fff;
+                    border-radius: 15px 0 15px 0;
+                    position: absolute;
+                    z-index: 9;
+                    top: 0;
+                    left: 0;
+                }
+                &-img{
+					width: 100%;
+					height: 306px;
+                    transition: .3s;
+					display: block;
+					object-fit: contain;
+					background-repeat: no-repeat;
+					background-size: cover;
+					background-position: center;
+                    overflow: hidden;
+                    border-radius: 15px 15px 0 0;
+                }
+            }
+        }
+    }
+}
+
+
+.categories{
+    max-width: 600px;
+    margin: 0 auto;
+    border-bottom: 2px solid #ffffff;
+
+    &-title{
+        font-size: 22px;
+        line-height: 30px;
+        font-weight: 600;
+    }
+
+    &__list{
+        padding: 35px 0 35px 0px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 20px;
+
+        &-category{
+            font-size: 16px;
+            transition: .2s;
+            line-height: 32px;
+            cursor: pointer;
+            background-color: $Background_first;
+            color: #fff;
+            position: relative;
+            padding: 5px 10px;
+            border-radius: 8px;
+            box-shadow: 0 5px 10px #00000049;
+            transition: 0.2s ease;
+            width: 120px;
+            text-align: center;
+        }
+        &-category:hover{
+            box-shadow: 0 5px 10px #00000092;
+            background-color: $Background_second;
+        }
+        &-category:active{
+            transform: scale(0.96);
+        }
+        &-category::after,
+        &-category::before{
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 100%;
+            width: 150%;
+            background-repeat: no-repeat;
+        }
+        &-category.active{
+            background-color: $color_second;
+        }
+        &-category.active::before{
+            top: -70%;
+            background-image: radial-gradient(circle, $color_second 20%, transparent 20%),
+                              radial-gradient(circle, transparent 20%, $color_second 20%, transparent 30%),
+                              radial-gradient(circle, $color_second 20%, transparent 20%),
+                              radial-gradient(circle, transparent 10%, $color_second 15%, transparent 20%),
+                              radial-gradient(circle, $color_second 20%, transparent 20%),
+                              radial-gradient(circle, $color_second 20%, transparent 20%),
+                              radial-gradient(circle, $color_second 20%, transparent 20%),
+                              radial-gradient(circle, $color_second 20%, transparent 20%);
+            background-size: 10% 10%, 20% 20%, 15% 20%, 20% 20%, 18% 18%, 10% 10%, 18% 18%;
+            background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+            animation: topBubbles 0.6s ease-in-out infinite;
+        }
+        @keyframes topBubbles {
+            50% {
+                background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+            }
+            100% {
+                background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+                background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+            }
+        }
+        &-category.active::after{
+            bottom: -70%;
+            background-image: radial-gradient(circle, $color_second 20%, transparent 20%),
+            radial-gradient(circle, transparent 10%, $color_second 15%, transparent 20%),
+            radial-gradient(circle, $color_second 20%, transparent 20%),
+            radial-gradient(circle, $color_second 20%, transparent 20%),
+            radial-gradient(circle, $color_second 20%, transparent 20%),
+            radial-gradient(circle, $color_second 20%, transparent 20%),
+            radial-gradient(circle, $color_second 20%, transparent 20%);
+            background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+            background-position: 10% 0%, 30% 10%, 55% 0%, 70% 0%, 85% 0%, 70% 0%, 70% 0%;
+            animation: bottomBubbles 0.6s ease-in-out infinite;
+        }
+        @keyframes bottomBubbles {
+            50% {
+                background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+            }
+            100% {
+                background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+                background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+            }
+        }
+    }
+
+    &-message{
+        font-size: 16px;
+        line-height: 22px;
+        color: red;
+        padding: 15px 0;
+    }
+}
+
+
+.sortDropdown{
+    &-list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+        border-radius: 7px;
+        color: #fff;
+        font-size: 16px;
+
+        &-item{
+            background-color: $Background_first;
+            padding: 10px;
+            border-radius: 0 0 20px 20px;
+            font-size: 16px;
+            width: 120px;
+            transition: .2s;
+
+            text-align: center;
+            cursor: pointer;
+        }
+        &-item:hover{
+            background-color: $Background_second;
+        }
+    }
+}
+
+
+
+@media(max-width: 600px) {
+    .categories__list{
+        padding-left: 0;
+    }
+    .sortDropdown-list{
+        padding-top: 30px;
+    }
+    .sortDropdown-list-item{
+        border-radius: 15px;
+        border: 1px solid #fff;
+    } 
+    .sortDropdown-list-item:hover{
+        border-radius: 15px;
+        background-color: #fff;
+        color: $Background_first;
+    }
+}

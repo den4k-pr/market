@@ -1,0 +1,289 @@
+@import './globals.scss';
+
+.authHide{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #0000003a;
+    z-index: 1;
+}
+.header__top__icons{
+    gap: 20px;
+}
+.header__top, .header__bottom-Container, .header__top__icons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header{
+    position: relative;
+    &__top{
+        padding: 20px 40px;
+        background-color: $Background_first;
+
+        &__logo{
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        &-auth{
+
+            &_link{
+                background-color: transparent;
+                align-items: center;
+                display: flex;
+
+                gap: 10px;
+                transition: .1s;
+                font-size: 16px;
+                border: 2px solid $Background_main;
+                padding: 5px;
+                border-radius: 7px;
+            }
+            &_link:hover{
+                color: $color_second;
+                border: 2px solid $color_second;
+            }
+        }
+        
+    }
+
+    &__bottom{
+        background-color: $Background_second;
+
+        &-Container{
+            padding: 0 15px;
+            box-sizing: border-box;
+
+            &__list{
+                margin: 0 auto;
+                display: flex;
+                gap: 20px;
+                li{
+                    padding: 10px;
+                    cursor: pointer;
+                }
+
+                li:hover{
+                    background-color: #b6b6b6;
+                }
+                &-link{
+                    font-size: 16px;
+                    line-height: 30px;
+                }
+            }
+        }
+    }
+}
+
+
+.search{
+    display: flex;
+    align-items: center;
+    margin: 40px auto 0 auto;
+    max-width: 400px;
+    &__input{
+        padding: 10px;
+        border-radius: 6px;
+        font-size: 14px;
+        width: 100%;
+    }
+    &__button{
+        font-size: 14px;
+        padding: 10px;
+        background-color: $color_second;
+        border-radius: 6px;
+        transition: .1s;
+        margin-left: 10px;
+    }
+    &__button:hover{
+        background-color: #604a24;
+    }
+    &__input:focus{
+        background-color: aliceblue;
+    }
+}
+
+.busket{
+    z-index: 10;
+    background-color: transparent;
+    color: $color_second;
+
+    &-number{
+        background-color: #fff;
+        border-radius: 40px;
+        padding: 2px 5px;
+    }
+}
+
+.cart{
+
+    &__content{
+        position: absolute;
+        transition: .3s;
+        max-width: 300px;
+        width: 100%;
+
+        z-index: 2;
+        top: 70px;
+        right: 0;
+        transform: translateX(100%);
+        background-color: $Background_first;
+        color: #fff;
+        padding: 30px;
+        border-radius: 0 0 0 25px;
+
+        &-title{
+            font-size: 22px;
+            line-height: 30px;
+            padding-bottom: 10px;
+            font-weight: 600;
+        }
+
+        &-list{
+            display: flex;
+            flex-direction: column;
+            max-height: 400px;
+            overflow-y: scroll;
+            gap: 20px;
+
+            .item{
+                &-img{
+                    width: 100%;
+                    height: 200px;
+                    display: block;
+                    border: 2px solid $color_second;
+                    border-radius: 10px;
+                    margin-bottom: 10px;
+                }
+
+                &__info{
+                    &-name{
+                        font-size: 16px;
+                        line-height: 22px;
+                        padding-bottom: 8px;
+                    }
+
+                    &-price{
+                        font-size: 16px;
+                        line-height: 18px;
+                        padding-bottom: 10px;
+                    }
+
+                    .navigation{
+                        display: flex;
+                        align-items: center;
+
+                        gap: 20px;
+                        
+                        input{
+                            width: 0;
+                        }
+
+                        .navigationCleen{
+                            background-color: transparent;
+                            font-size: 24px;
+                            margin-left: auto;
+                            margin-top: 6px;
+                        }
+                        .navigationButton{
+                            background-color: #604a24;
+                            width: 30px;
+                            height: 30px;
+                            border-radius: 50px;
+                            font-size: 16px;
+                            transition: .1s;
+                        }
+                        .navigationButton:hover{
+                            background-color: #d4a960;
+                        }
+                    }
+                }
+            }
+
+            &_message{
+                font-size: 22px;
+                line-height: 200px;
+                font-weight: 600;
+                text-align: center;
+            }
+        }
+
+        &-info{
+            &_title{
+                font-size: 18px;
+                padding: 30px 0 10px 0;
+                line-height: 22px;
+            }
+
+            &_total{
+                color: rgb(248, 44, 44);
+                font-size: 16px;
+                line-height: 22px;
+                padding-bottom: 10px;
+            }
+        }
+    }
+}
+
+
+
+@media(max-width: 600px){
+    .cart__content{
+        top: 110px;
+    }
+    .header__top__icons{
+        justify-content: space-between;
+        width: 100%;
+    }
+    .header__top-auth_link{
+        font-size: 14px;
+    }
+    .header__top{
+        padding: 20px;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+    }
+    .header__bottom-Container{
+        gap: 20px;
+        flex-direction: column;
+    }
+}
+
+
+.footer{
+    background-color: $Background_first;
+    color: #fff;
+
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__text{
+        font-size: 14px;
+        line-height: 20px;
+        padding-right: 30px;
+    }
+
+    button {
+        order: 1;
+        background-image: url(/arrow.png);
+        background-repeat: no-repeat;
+        background-size: 25px;
+        background-position: center;
+        width: 40px;
+        height: 40px;
+        background-color: $color_second;
+        border-radius: 7px;
+        transform: rotate(-90deg);
+        transition: 0.2s;
+    }
+    button:hover {
+        box-shadow: -5px 0 10px 0 $color_second;
+    }
+}
